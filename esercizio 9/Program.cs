@@ -10,24 +10,24 @@ namespace esercizio_9
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Inserire dimensione");
+            Console.WriteLine("Inserire dimensione: ");
             int d=int.Parse(Console.ReadLine());
             int[] a = new int[d];
-            int[] b=new int[d];
+            int[] b = new int[d];
+            Console.WriteLine("Inserire numero: ");
             for (int i = 0; i < d; i++)
             {
-                Console.WriteLine("Inserire numero: ");
-                a[i]=int.Parse(Console.ReadLine());
-                inv(a, b, ref d);
-                Console.WriteLine(b);
+                Console.WriteLine("Elemento {0}", i);
+                a[i] = int.Parse(Console.ReadLine());
             }
-
-        }
-        public static void inv(int []a, int []b, ref int d)
-        {
             for(int i = 0; i < d; i++)
             {
-                a[i] = b[d];
+                b[d-i-1]=a[i];
+            }
+            Console.WriteLine(Environment.NewLine + "Valori invertiti: "); //forza l'andare a capo
+            for(int i = 0; i < d; i++)
+            {
+                Console.WriteLine("{0}",b[i]);
             }
         }
     }
